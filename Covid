@@ -1,7 +1,6 @@
 -- Covid-19 Data Exploration using 2 tables namely, CovidDeaths$ and CovidVaccinations$ 
 
 
-
 --Following query shows complete datasets of respective tables
 
 Select * 
@@ -11,6 +10,29 @@ order by location, date
 Select * 
 From CovidDataAnalysis..CovidVaccinations$ 
 order by location, date
+
+== Total cases vs total deaths, shows death percentage
+
+Select location, date, total_cases, total_deaths, (total_deaths/total_cases)*100 as DeathRate
+From CovidDataAnalysis..CovidDeaths$ 
+WHERE total_cases IS NOT NULL AND total_deaths IS NOT NULL
+Order By location, date
+
+== Total cases vs total deaths, shows death percentage in India
+
+Select location, date, total_cases, total_deaths, (total_deaths/total_cases)*100 as DeathRate
+From CovidDataAnalysis..CovidDeaths$ 
+WHERE total_cases IS NOT NULL AND total_deaths IS NOT NULL AND location = 'India'
+Order By location, date
+
+
+
+
+
+
+
+
+
 
 
 
