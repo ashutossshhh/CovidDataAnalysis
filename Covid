@@ -1,0 +1,17 @@
+-- Covid-19 Data Exploration using 2 tables namely, CovidDeaths$ and CovidVaccinations$ 
+
+
+
+--Following query shows complete datasets of respective tables
+
+Select * 
+From CovidDataAnalysis..CovidDeaths$ 
+order by location, date
+
+Select * 
+From CovidDataAnalysis..CovidVaccinations$ 
+order by location, date
+
+
+
+
